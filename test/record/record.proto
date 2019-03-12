@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package storerecords;
+
+// The storing service definition.
+service StoreRecords {
+  // Sends a record
+  rpc StoreRecord (StoreRecordRequest) returns (StoreRecordReply) {}
+}
+
+// The request message containing the record
+message StoreRecordRequest {
+    uint64 id = 1;
+    string name = 2;
+    string email = 3;
+    string mobileNumber = 4;
+}
+
+// The response message containing the ack
+message StoreRecordReply {
+    string message = 1;
+}
